@@ -7,6 +7,14 @@ cd C:\Users\%USERNAME%\Desktop || (
     exit /b
 )
 
+REM check if Python is installed
+python --version >nul 2>&1
+if %errorlevel% neq 0 (
+    echo Error: Python is not installed.
+    timeout /t 5 /nobreak >nul
+    exit /b
+)
+
 REM check if pystyle is already installed
 pip show pystyle >nul 2>&1
 if %errorlevel% neq 0 (
