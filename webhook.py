@@ -1,3 +1,5 @@
+#created by jeremy
+
 import string, json, requests, random
 from pystyle import Colorate, Colors, Center
 from os import system
@@ -20,7 +22,7 @@ def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
 
 def send_message(webhook_url):
     username = id_generator(80)
-    message = "@everyone :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: https://media.discordapp.net/attachments/1003646496341770251/1022831786100801576/unknown.png "    
+    message = "@everyone :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: :chains: Nuked By Jeremy "    
     avatar = "https://picsum.photo/id/{}/300".format(random.randint(1, 500))
     data = json.dumps({
         "content": message,
@@ -38,13 +40,13 @@ def send_message(webhook_url):
     if not response.ok:
         if response.status_code == 429:
             system('cls')
-            print(Colorate.Horizontal(Colors.black_to_red, Center.XCenter(header_final)))
-            print(Colorate.Horizontal(Colors.black_to_red, "[/] ..."))
+            print(Colorate.Horizontal(Colors.blue_to_red, Center.XCenter(header_final)))
+            print(Colorate.Horizontal(Colors.blue_to_red, "[/] ..."))
             sleep(2)
         else:
             system('cls')
-            print(Colorate.Horizontal(Colors.black_to_red, Center.XCenter(header_final)))
-            print(Colorate.Horizontal(Colors.black_to_red, "[!] Failed to send message !"))
+            print(Colorate.Horizontal(Colors.blue_to_red, Center.XCenter(header_final)))
+            print(Colorate.Horizontal(Colors.blue_to_red, "[!] Failed to send message !"))
             sleep(15)
         try:
             system('cls')
@@ -52,8 +54,8 @@ def send_message(webhook_url):
             print(Colorate.Horizontal(Colors.blue_to_green, f"[+] Message sended ! [ {sent_count}]"))
         except:
             system('cls')
-            print(Colorate.Horizontal(Colors.black_to_red, Center.XCenter(header_final)))
-            print(Colorate.Horizontal(Colors.black_to_red, "[!] Failed to send message !"))
+            print(Colorate.Horizontal(Colors.blue_to_red, Center.XCenter(header_final)))
+            print(Colorate.Horizontal(Colors.blue_to_red, "[!] Failed to send message !"))
             sleep(15)
         return True
 
@@ -69,16 +71,16 @@ header_final = f"""
 \n\n\n\n"""
 
 while boucle1:
-    print(Colorate.Horizontal(Colors.yellow_to_red, Center.XCenter(header_final)))
-    print(Colorate.Horizontal(Colors.yellow_to_red, "[-] Webhook URL"))
+    print(Colorate.Horizontal(Colors.green_to_yellow, Center.XCenter(header_final)))
+    print(Colorate.Horizontal(Colors.green_to_yellow, "[-] Webhook URL"))
     webhook_url = input("")
     if webhook_url.startswith("https://discord.com/api/webhooks/"):
         boucle1 = False
         system('cls')
     else:
         system('cls')
-        print(Colorate.Horizontal(Colors.black_to_red, Center.XCenter(header_final)))
-        print(Colorate.Horizontal(Colors.black_to_red, "[!] Error valid link !"))
+        print(Colorate.Horizontal(Colors.blue_to_red, Center.XCenter(header_final)))
+        print(Colorate.Horizontal(Colors.blue_to_red, "[!] Error valid link !"))
         sleep(2)
         system('cls')
         
